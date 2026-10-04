@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="th">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Prompt:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+                font-family: 'Prompt', 'Plus Jakarta Sans', sans-serif;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface": "#f5fcee", "secondary-fixed": "#ffdcc4", "tertiary-fixed-dim": "#f4aff6", "outline": "#6e7b6a", "tertiary": "#824988", "surface-dim": "#d5dccf", "surface-container-highest": "#dee5d7", "background": "#f5fcee", "on-tertiary-fixed": "#36003e", "secondary": "#8e4e14", "surface-container-lowest": "#ffffff", "deep-forest": "#173B25", "on-surface": "#171d15", "surface-variant": "#dee5d7", "inverse-surface": "#2b3229", "on-tertiary-fixed-variant": "#68316e", "tertiary-container": "#eba7ed", "surface-container-high": "#e3eadd", "inverse-primary": "#6adf69", "peach-sorbet": "#F8DFBF", "on-background": "#171d15", "sky-tint": "#B6DDF6", "on-tertiary-container": "#6f3775", "on-error": "#ffffff", "error-container": "#ffdad6", "error": "#ba1a1a", "on-secondary-fixed-variant": "#6f3800", "secondary-container": "#ffab69", "primary-container": "#62d662", "surface-container": "#e9f0e3", "sun-yellow": "#FDE871", "on-tertiary": "#ffffff", "surface-container-low": "#eff6e8", "on-surface-variant": "#3e4a3b", "surface-bright": "#f5fcee", "on-primary-fixed-variant": "#005310", "on-secondary-container": "#783d01", "surface-tint": "#006e19", "on-primary": "#ffffff", "on-secondary-fixed": "#2f1400", "inverse-on-surface": "#ecf3e5", "secondary-fixed-dim": "#ffb780", "matcha-leaf": "#44B844", "primary-fixed": "#87fc82", "butter-cream": "#FBF7F4", "primary-fixed-dim": "#6adf69", "primary": "#006e19", "wild-lavender": "#EAB8E4", "on-secondary": "#ffffff", "on-primary-fixed": "#002203", "on-error-container": "#93000a", "outline-variant": "#bdcab7", "tertiary-fixed": "#ffd6fd", "pure-black": "#111111", "on-primary-container": "#005a12" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "gutter-mobile": "0.75rem", "space-sm": "0.5rem", "gutter": "1.25rem", "space-2xl": "4rem", "space-lg": "1.5rem", "margin": "2.5rem", "margin-mobile": "1rem", "space-xl": "2.5rem", "space-xs": "0.25rem" }, fontFamily: { "label-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "stat-counter": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-caps": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"] }, fontSize: { "label-md": ["14px", { "lineHeight": "18px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "display-hero": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-sm": ["20px", { "lineHeight": "26px", "fontWeight": "700" }], "stat-counter": ["44px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-lg": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "800" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "display-hero-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }] } } } };</script>
+</head>
+
+<body class="bg-surface text-on-surface antialiased">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-butter-cream/90 backdrop-blur-xl border-b border-on-surface/10">
+        <div class="h-20 w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-space-md">
+            <div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #0284c7
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain"
+                    src="https://lh3.googleusercontent.com/aida/AEtjO1Wkf3pjBGqE_VBDql07bXYP0pcJL5izA5fwgEdF9JQ08F4y5U5rlbT5jTA_dMD317eKzCdcGU0B34GP088Dc7SkxGjGTiQY2YdlXDBSZbv_RLAeoiAbCCI6o6in9XTynBpUQJC427PxjtnsEZCKfsPmQlpQYBEDKfbSG_kx0X8CLWDwYlZ-4qrsxUgcIVYaHKN_y-yTU82HhmcUT9qB4qarQOb0Vc9YwWQL5kbk7KVz" />
+                <div class="flex flex-col"><span
+                        class="font-headline-sm text-headline-sm text-deep-forest leading-none">Kin Balanza</span><span
+                        class="font-label-caps text-label-caps text-matcha-leaf uppercase tracking-wider">Plant-Based
+                        Superfood</span></div>
+            </div>
+            <nav class="hidden lg:flex items-center gap-space-md bg-surface-container-lowest/80 px-space-md py-space-xs rounded-full border border-on-surface/5"
+                data-active-classes="bg-surface-container text-deep-forest font-bold rounded-full py-space-xs px-space-md">
+                <a aria-current="page"
+                    class="transition-colors bg-surface-container text-deep-forest font-bold rounded-full py-space-xs px-space-md"
+                    data-path="home" href="#">จุดเด่นสินค้า</a><a
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors"
+                    data-path="nutrition" href="#">สารอาหาร</a><a
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors"
+                    data-path="packages" href="#">เลือกชุดสินค้า</a><a
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors"
+                    data-path="how-to-order" href="#">ขั้นตอนสั่งซื้อ</a></nav>
+            <div class="flex items-center gap-space-sm"><a
+                    class="inline-flex items-center justify-center bg-primary hover:bg-primary-fixed-dim text-on-primary font-label-md text-label-md px-space-lg py-space-sm rounded-full transition-all active:translate-y-0.5 shadow-sm"
+                    data-path="checkout" href="#">สั่งซื้อทันที / LINE OA</a>
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span
+                        class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]">
+        <div class="flex flex-col w-full font-['Prompt',sans-serif]">
+            <!-- TOP CONTEXT ANCHOR -->
+            <div class="w-full bg-butter-cream py-space-sm px-gutter border-b border-on-surface/5">
+                <div
+                    class="max-w-6xl mx-auto flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant">
+                    <span class="font-bold text-deep-forest tracking-wider uppercase">KIN BALANZA</span>
+                    <span class="text-on-surface-variant/70 tracking-widest uppercase">LANDING PAGE • NUTRITION
+                        PREVIEW</span>
+                </div>
+            </div>
+            <!-- SECTION 1: HERO / INTRO (SLIDE 1 INSPIRATION) -->
+            <section
+                class="relative w-full overflow-hidden bg-gradient-to-b from-surface to-butter-cream py-space-2xl px-gutter">
+                <!-- Subtle Wolffia pond ambient glow -->
+                <div
+                    class="absolute -top-24 -right-24 w-96 h-96 bg-matcha-leaf/10 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <div class="absolute top-1/2 left-0 w-80 h-80 bg-sky-tint/20 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center relative z-10">
+                    <!-- Left Column: Copy & Primary CTA -->
+                    <div class="lg:col-span-7 flex flex-col items-start gap-space-lg">
+                        <!-- Age Badge -->
+                        <div
+                            class="inline-flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-sm">
+                            <span class="w-2.5 h-2.5 rounded-full bg-[#FF4A6E] animate-pulse"></span>
+                            <span class="font-label-md text-label-md text-deep-forest font-semibold">สำหรับเด็ก 6
+                                ปีขึ้นไป</span>
+                        </div>
+                        <!-- Headline -->
+                        <h1 class="font-display-hero text-display-hero text-deep-forest leading-tight tracking-tight">
+                            เติมทุกวันให้ลูก<br />
+                            <span class="text-primary">โตดีอย่างสมดุล</span>
+                        </h1>
+                        <!-- Subheading -->
+                        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+                            โปรตีนจากพืชผสมไข่ผำ พร้อม DHA Omega 3 และใยอาหาร ตัวช่วยง่าย ๆ
+                            ในวันที่ลูกกินได้น้อยหรือเลือกกิน รสมอลต์หอมนุ่ม ดื่มง่าย ถูกใจเด็กวัยเจริญเติบโต
+                        </p>
+                        <!-- CTA & Quick Trust Note -->
+                        <div
+                            class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md w-full sm:w-auto pt-space-xs">
+                            <a class="inline-flex items-center justify-center gap-space-xs bg-deep-forest hover:bg-deep-forest/90 text-surface font-headline-sm text-headline-sm px-space-xl py-space-md rounded-full shadow-md transition-all active:translate-y-0.5"
+                                href="#packages">
+                                <span>เลือกชุดที่เหมาะกับลูก</span>
+                                <span class="material-symbols-outlined text-[20px]">arrow_downward</span>
+                            </a>
+                            <div
+                                class="flex items-center gap-space-xs px-space-sm text-on-surface-variant font-body-sm text-body-sm">
+                                <span class="material-symbols-outlined text-matcha-leaf text-[20px]">verified</span>
+                                <span>สูตรแพทย์ &amp; นักโภชนาการดูแล</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Column: Product Presentation Card (matching slide 1 photograph layout) -->
+                    <div class="lg:col-span-5 flex flex-col items-center">
+                        <div
+                            class="relative w-full max-w-md bg-surface-container-lowest rounded-[2.5rem] p-space-md shadow-xl border-4 border-surface-container-lowest">
+                            <!-- Age Pill Tag on Image -->
+                            <div
+                                class="absolute top-6 right-6 z-20 bg-[#FF4A6E] text-surface-container-lowest font-headline-sm text-headline-sm font-extrabold px-space-md py-1 rounded-full shadow-md tracking-wider">
+                                6+ YEARS
+                            </div>
+                            <!-- Product Hero Image -->
+                            <div class="relative w-full h-[380px] rounded-[2rem] overflow-hidden bg-surface-container">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="Modern crisp packaging box of Kin Balanza Plant Based Protein with Wolffia sitting on warm linen texture. Featuring cute Wolffia mascot and small green bowl of micro-crop superfood. Natural gentle lighting, premium aesthetic."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh1jIGtEK8sTPdt52r5fEC2SlRZx_s71LmO2TfbICDs51D25uqIMGgshcB4MaItuc3Gy0LhDiSWaFNW4eAdKzl3HuNTacOn_GgezuKkATuweg40V9uj4Z7tt8qeCbSVA5eSDjyVTNjE-flm78esg6iKef14fWp0fnHsVl8c09v_9a36ijgOLWqXZD7bEf8yMCnuleu-46Big2yLfetwTsuhhuOVaRtKnCekHHDjpA" />
+                            </div>
+                            <!-- 3 Micro Value Badges below photo -->
+                            <div class="grid grid-cols-3 gap-space-xs mt-space-md">
+                                <div
+                                    class="flex flex-col items-center justify-center py-space-sm px-space-xs bg-surface-container-low rounded-2xl text-center">
+                                    <span
+                                        class="font-stat-counter text-headline-md text-amber-600 font-extrabold leading-none">8g</span>
+                                    <span
+                                        class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-1">PROTEIN</span>
+                                </div>
+                                <div
+                                    class="flex flex-col items-center justify-center py-space-sm px-space-xs bg-sky-tint/30 rounded-2xl text-center">
+                                    <span
+                                        class="font-stat-counter text-headline-md text-[#0284c7] font-extrabold leading-none">DHA</span>
+                                    <span
+                                        class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-1">OMEGA
+                                        3</span>
+                                </div>
+                                <div
+                                    class="flex flex-col items-center justify-center py-space-sm px-space-xs bg-[#ffe4e9] rounded-2xl text-center">
+                                    <span
+                                        class="font-stat-counter text-headline-md text-[#FF4A6E] font-extrabold leading-none">FIBER</span>
+                                    <span
+                                        class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-1">ใยอาหาร</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 2: EMOTIONAL INSIGHT & INGREDIENT HIGHLIGHTS (SLIDE 2 INSPIRATION) -->
+            <section class="w-full bg-butter-cream py-space-2xl px-gutter" id="nutrition">
+                <div class="max-w-5xl mx-auto flex flex-col gap-space-xl">
+                    <!-- Section Header -->
+                    <div class="flex flex-col gap-space-xs text-left">
+                        <span class="font-label-caps text-label-caps text-matcha-leaf uppercase tracking-wider">MOM
+                            INSIGHT &amp; DAILY NUTRITION</span>
+                        <h2 class="font-headline-lg text-headline-lg text-deep-forest tracking-tight">
+                            โภชนาการที่เข้าใจชีวิตจริงของแม่
+                        </h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                            เพราะไม่ใช่ทุกมื้อที่ลูกจะกินได้ครบ
+                            เราจึงออกแบบหน้าเว็บและสารอาหารให้เล่าเรื่องจากความกังวลของแม่ ไปสู่ทางเลือกที่ตัดสินใจง่าย
+                        </p>
+                    </div>
+                    <!-- Signature Dark Green Emotional Card -->
+                    <div
+                        class="w-full bg-deep-forest text-surface-container-lowest rounded-[2rem] p-space-xl shadow-lg relative overflow-hidden">
+                        <div
+                            class="absolute -bottom-16 -right-16 w-64 h-64 bg-matcha-leaf/10 rounded-full blur-2xl pointer-events-none">
+                        </div>
+                        <div class="flex flex-col gap-space-md max-w-2xl relative z-10">
+                            <h3 class="font-headline-lg text-headline-lg font-bold text-surface-container-lowest">
+                                “วันนี้กินข้าวนิดเดียวเองลูก...”
+                            </h3>
+                            <p class="font-body-lg text-body-lg text-surface-dim leading-relaxed">
+                                ประโยคที่คุณแม่หลายคนพูดซ้ำ ๆ เมื่อลูกเลือกกิน ไม่แตะผัก
+                                หรือรีบไปโรงเรียนจนมื้อเช้าเหลือไม่กี่คำ
+                                ทำให้คุณแม่ต้องคอยกังวลว่าลูกจะได้รับสารอาหารไม่เพียงพอ
+                            </p>
+                            <div class="pt-space-xs">
+                                <span class="font-headline-sm text-headline-sm text-[#D8F289] font-bold">
+                                    เราไม่ต้องทำให้ทุกมื้อสมบูรณ์แบบ
+                                </span>
+                                <span class="font-body-lg text-body-lg text-surface-container-lowest ml-1">
+                                    แค่ค่อย ๆ เติมสิ่งดี ๆ ให้ลูกอย่างสม่ำเสมอในทุก ๆ วัน
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3 Key Nutrient Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+                        <!-- Card 1: Protein -->
+                        <div
+                            class="bg-surface-container-lowest rounded-[2rem] p-space-lg flex flex-col items-start gap-space-md shadow-sm transition-all hover:-translate-y-1">
+                            <div class="w-14 h-14 rounded-full bg-sky-tint/30 flex items-center justify-center">
+                                <div class="w-6 h-6 rounded-full bg-deep-forest"></div>
+                            </div>
+                            <div class="flex flex-col gap-space-xs">
+                                <h4 class="font-headline-sm text-headline-sm text-deep-forest">โปรตีนจากพืช</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    โปรตีน 8 กรัมต่อซอง จากผำ (Wolffia) ผสมโปรตีนพืชย่อยง่าย
+                                    ช่วยเสริมสร้างกล้ามเนื้อและเติมโปรตีนในแต่ละวัน
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Card 2: DHA Omega 3 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-[2rem] p-space-lg flex flex-col items-start gap-space-md shadow-sm transition-all hover:-translate-y-1">
+                            <div class="w-14 h-14 rounded-full bg-sky-tint/30 flex items-center justify-center">
+                                <div class="w-6 h-6 rounded-full bg-deep-forest"></div>
+                            </div>
+                            <div class="flex flex-col gap-space-xs">
+                                <h4 class="font-headline-sm text-headline-sm text-deep-forest">DHA Omega 3</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    DHA จากสาหร่ายธรรมชาติ บริสุทธิ์ ปราศจากโลหะหนัก
+                                    อีกหนึ่งสารอาหารสำคัญสำหรับเด็กวัยเรียน สมาธิและการเรียนรู้
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Card 3: Fiber -->
+                        <div
+                            class="bg-surface-container-lowest rounded-[2rem] p-space-lg flex flex-col items-start gap-space-md shadow-sm transition-all hover:-translate-y-1">
+                            <div class="w-14 h-14 rounded-full bg-sky-tint/30 flex items-center justify-center">
+                                <div class="w-6 h-6 rounded-full bg-deep-forest"></div>
+                            </div>
+                            <div class="flex flex-col gap-space-xs">
+                                <h4 class="font-headline-sm text-headline-sm text-deep-forest">ใยอาหาร</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                    พรีไบโอติกส์และไฟเบอร์ธรรมชาติ อิ่มสบายท้อง ลำไส้สมดุล
+                                    เหมาะกับการเป็นส่วนหนึ่งของมื้อเช้าหรือมื้อเสริมก่อนนอน
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Light Lime Feature Pill Banner -->
+                    <div
+                        class="w-full bg-[#E9F4DC] rounded-[2rem] p-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md">
+                        <div class="flex items-center gap-space-sm">
+                            <div
+                                class="w-10 h-10 rounded-full bg-deep-forest flex items-center justify-center text-surface">
+                                <span class="material-symbols-outlined text-[20px]">wb_sunny</span>
+                            </div>
+                            <span
+                                class="font-headline-sm text-headline-sm text-deep-forest">หนึ่งซองที่ช่วยให้เช้าง่ายขึ้น</span>
+                        </div>
+                        <div
+                            class="flex flex-wrap items-center gap-x-space-md gap-y-space-xs font-body-md text-body-md text-deep-forest font-medium">
+                            <span>ตวงง่าย ละลายทันที</span>
+                            <span>•</span>
+                            <span>รสมอลต์ ดื่มง่าย ไม่ฝืดคอ</span>
+                            <span>•</span>
+                            <span>เป็นตัวช่วยควบคู่กับอาหารที่หลากหลาย</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 3: PACKAGES & OFFERS (SLIDE 3 INSPIRATION) -->
+            <section class="w-full bg-surface py-space-2xl px-gutter" id="packages">
+                <div class="max-w-5xl mx-auto flex flex-col gap-space-xl">
+                    <!-- Section Heading -->
+                    <div class="flex flex-col gap-space-xs text-left">
+                        <span class="font-label-caps text-label-caps text-matcha-leaf uppercase tracking-wider">PACKAGE
+                            SELECTION</span>
+                        <h2 class="font-headline-lg text-headline-lg text-deep-forest tracking-tight">
+                            เลือกชุดที่เหมาะกับลูก
+                        </h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            โครงหน้าเน้นสินค้า 2 ชุด เพื่อให้ลูกค้าตัดสินใจได้ง่ายและไม่สับสน
+                        </p>
+                    </div>
+                    <!-- 2 Comparison Product Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg items-stretch">
+                        <!-- CARD 1: TRY SET -->
+                        <div
+                            class="bg-butter-cream rounded-[2.5rem] p-space-xl flex flex-col justify-between shadow-sm relative">
+                            <div class="flex flex-col gap-space-md">
+                                <div>
+                                    <span
+                                        class="font-label-caps text-label-caps text-deep-forest uppercase tracking-widest font-bold">TRY
+                                        SET</span>
+                                    <h3 class="font-headline-md text-headline-md text-deep-forest mt-space-xs">
+                                        ชุดเริ่มต้น</h3>
+                                </div>
+                                <!-- Price -->
+                                <div class="flex items-baseline gap-1">
+                                    <span
+                                        class="font-stat-counter text-stat-counter text-deep-forest font-extrabold leading-none">฿369</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">/ กล่อง</span>
+                                </div>
+                                <!-- Bullet benefits -->
+                                <div class="flex flex-col gap-space-sm pt-space-sm">
+                                    <div class="flex items-center gap-space-sm">
+                                        <span class="w-3 h-3 rounded-full bg-[#A8D5BA] flex-shrink-0"></span>
+                                        <span class="font-body-md text-body-md text-deep-forest">Kin Balanza 1
+                                            กล่อง</span>
+                                    </div>
+                                    <div class="flex items-center gap-space-sm">
+                                        <span class="w-3 h-3 rounded-full bg-[#A8D5BA] flex-shrink-0"></span>
+                                        <span class="font-body-md text-body-md text-deep-forest">10 ซองต่อกล่อง
+                                            (พกพาสะดวก)</span>
+                                    </div>
+                                    <div class="flex items-center gap-space-sm">
+                                        <span class="w-3 h-3 rounded-full bg-[#A8D5BA] flex-shrink-0"></span>
+                                        <span class="font-body-md text-body-md text-deep-forest">ฟรี Sticker Set
+                                            สำหรับเด็ก ๆ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Action Button -->
+                            <div class="pt-space-xl">
+                                <button
+                                    class="w-full bg-deep-forest hover:bg-deep-forest/90 text-surface font-headline-sm text-headline-sm py-space-md rounded-full transition-all active:translate-y-0.5 shadow-md flex items-center justify-center gap-space-xs"
+                                    onclick="handleSelectPackage('TRY SET', 369)">
+                                    <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+                                    <span>เพิ่มลงตะกร้า</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- CARD 2: GROWING SET (Featured / Highlighted) -->
+                        <div
+                            class="bg-surface-container-lowest rounded-[2.5rem] p-space-xl flex flex-col justify-between shadow-lg relative border-2 border-deep-forest">
+                            <!-- Best Value Badge -->
+                            <div
+                                class="absolute -top-3.5 right-8 bg-[#D8F289] text-deep-forest font-headline-sm text-headline-sm font-extrabold px-space-lg py-1 rounded-full shadow-sm">
+                                คุ้มกว่า
+                            </div>
+                            <div class="flex flex-col gap-space-md">
+                                <div>
+                                    <span
+                                        class="font-label-caps text-label-caps text-matcha-leaf uppercase tracking-widest font-bold">GROWING
+                                        SET</span>
+                                    <h3 class="font-headline-md text-headline-md text-deep-forest mt-space-xs">ชุดโตดี
+                                    </h3>
+                                </div>
+                                <!-- Price -->
+                                <div class="flex items-baseline gap-1">
+                                    <span
+                                        class="font-stat-counter text-stat-counter text-deep-forest font-extrabold leading-none">฿699</span>
+                                    <span class="font-body-sm text-body-sm text-on-surface-variant">/ 2 กล่อง (ประหยัด
+                                        ฿39)</span>
+                                </div>
+                                <!-- Bullet benefits -->
+                                <div class="flex flex-col gap-space-sm pt-space-sm">
+                                    <div class="flex items-center gap-space-sm">
+                                        <span class="w-3 h-3 rounded-full bg-matcha-leaf flex-shrink-0"></span>
+                                        <span class="font-body-md text-body-md text-deep-forest font-semibold">Kin
+                                            Balanza 2 กล่อง</span>
+                                    </div>
+                                    <div class="flex items-center gap-space-sm">
+                                        <span class="w-3 h-3 rounded-full bg-matcha-leaf flex-shrink-0"></span>
+                                        <span class="font-body-md text-body-md text-deep-forest">รวม 20 ซอง
+                                            (เพียงพอสำหรับ 3-4 สัปดาห์)</span>
+                                    </div>
+                                    <div class="flex items-center gap-space-sm">
+                                        <span class="w-3 h-3 rounded-full bg-matcha-leaf flex-shrink-0"></span>
+                                        <span class="font-body-md text-body-md text-deep-forest font-semibold">ฟรี
+                                            Shaker กระบอกเชค + Sticker Set</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Action Button -->
+                            <div class="pt-space-xl">
+                                <button
+                                    class="w-full bg-deep-forest hover:bg-deep-forest/90 text-surface font-headline-sm text-headline-sm py-space-md rounded-full transition-all active:translate-y-0.5 shadow-md flex items-center justify-center gap-space-xs"
+                                    onclick="handleSelectPackage('GROWING SET', 699)">
+                                    <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                                    <span>เพิ่มลงตะกร้า</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Promo Banner: HAPPY GROWING PROMO (Slide 3 Bottom) -->
+                    <div
+                        class="w-full bg-[#E5F3F0] rounded-[2.5rem] p-space-lg md:p-space-xl grid grid-cols-1 md:grid-cols-12 gap-space-lg items-center shadow-sm">
+                        <div class="md:col-span-8 flex flex-col gap-space-sm">
+                            <div class="flex items-center gap-space-xs">
+                                <span class="w-2.5 h-2.5 rounded-full bg-deep-forest"></span>
+                                <span
+                                    class="font-headline-md text-headline-md text-deep-forest uppercase tracking-tight">HAPPY
+                                    GROWING PROMO</span>
+                            </div>
+                            <p class="font-headline-sm text-headline-sm text-deep-forest font-semibold">
+                                จำนวนจำกัดสำหรับ 100 คำสั่งซื้อแรก
+                            </p>
+                            <p class="font-body-md text-body-md text-on-surface-variant">
+                                รับเพิ่มของขวัญต้อนรับเปิดเทอม และสิทธิ์ปรึกษานักกำหนดอาหารเด็กฟรีผ่าน LINE Official
+                            </p>
+                            <div
+                                class="flex flex-wrap items-center gap-space-sm pt-space-xs text-deep-forest font-label-md text-label-md">
+                                <span class="bg-surface-container-lowest px-space-md py-space-xs rounded-full">Call to
+                                    action: เพิ่มลงตะกร้า</span>
+                                <span>•</span>
+                                <span class="bg-surface-container-lowest px-space-md py-space-xs rounded-full">LINE OA
+                                    @kinbalanza</span>
+                                <span>•</span>
+                                <span class="bg-surface-container-lowest px-space-md py-space-xs rounded-full">Shopee
+                                    Mall</span>
+                            </div>
+                        </div>
+                        <div class="md:col-span-4 flex justify-center">
+                            <div
+                                class="w-48 h-48 rounded-2xl overflow-hidden shadow-md bg-surface-container-lowest p-2">
+                                <img class="w-full h-full object-cover rounded-xl"
+                                    data-alt="Close up single sachet pouch of Kin Balanza Plant Based Protein with Wolffia placed neatly on textured table. High resolution macro photo showing green powder logo and 8g protein icon."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuABB8dKzH3__BChJjIVKkgiWFkd4Y1b7D0czSGEh5eBTIdJrD9zqNZK_uGWFKWTK1MwYFasDDWGsVQK0fvHb-lKd-zDA_QyxW2EpDbQ2cnjVocWjUyJDxeZa8lg0e_evGNJFmkKqUpkpexxp9wDjNVEF7WUQkn_aB7IV99_Y5hWoMxmTPC1Eef00dncgjIvD9Dp7MEHThnfjKMoWUgnNOEXDBkIVkoMopaFHD6iapY" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 4: CART & ORDERING PROCESS (SLIDE 4 INSPIRATION) -->
+            <section class="w-full bg-butter-cream py-space-2xl px-gutter" id="how-to-order">
+                <div class="max-w-5xl mx-auto flex flex-col gap-space-xl">
+                    <!-- Section Header -->
+                    <div class="flex flex-col gap-space-xs text-left">
+                        <span class="font-label-caps text-label-caps text-matcha-leaf uppercase tracking-wider">SEAMLESS
+                            ORDER FLOW</span>
+                        <h2 class="font-headline-lg text-headline-lg text-deep-forest tracking-tight">
+                            ตะกร้าและขั้นตอนรับออเดอร์
+                        </h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            ลูกค้าเลือกจำนวน เห็นยอดรวม และส่งข้อมูลให้ร้านได้ในขั้นตอนเดียว ปลอดภัย
+                            ไม่ต้องกรอกบัตรเครดิต
+                        </p>
+                    </div>
+                    <!-- 4 Ordering Step Cards (Matching Slide 4 pill cards) -->
+                    <div class="flex flex-col gap-space-sm">
+                        <!-- Step 1 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-[2rem] p-space-lg flex items-center gap-space-lg shadow-sm">
+                            <div
+                                class="w-14 h-14 rounded-full bg-deep-forest text-surface-container-lowest flex items-center justify-center font-stat-counter text-headline-md font-bold flex-shrink-0">
+                                1
+                            </div>
+                            <div class="flex flex-col">
+                                <h4 class="font-headline-sm text-headline-sm text-deep-forest">เลือกชุด</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">TRY SET หรือ GROWING SET
+                                    ตามระยะเวลาที่ต้องการเสริมอาหารให้ลูก</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-[2rem] p-space-lg flex items-center gap-space-lg shadow-sm">
+                            <div
+                                class="w-14 h-14 rounded-full bg-deep-forest text-surface-container-lowest flex items-center justify-center font-stat-counter text-headline-md font-bold flex-shrink-0">
+                                2
+                            </div>
+                            <div class="flex flex-col">
+                                <h4 class="font-headline-sm text-headline-sm text-deep-forest">ปรับจำนวน</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">เพิ่ม ลด หรือนำสินค้าออก
+                                    ตรวจสอบยอดรวมที่แสดงแบบเรียลไทม์</p>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-[2rem] p-space-lg flex items-center gap-space-lg shadow-sm">
+                            <div
+                                class="w-14 h-14 rounded-full bg-deep-forest text-surface-container-lowest flex items-center justify-center font-stat-counter text-headline-md font-bold flex-shrink-0">
+                                3
+                            </div>
+                            <div class="flex flex-col">
+                                <h4 class="font-headline-sm text-headline-sm text-deep-forest">กรอกข้อมูล</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">ชื่อ เบอร์โทร
+                                    และที่อยู่จัดส่งพัสดุ (ง่ายและรวดเร็วใน 3 ช่อง)</p>
+                            </div>
+                        </div>
+                        <!-- Step 4 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-[2rem] p-space-lg flex items-center gap-space-lg shadow-sm">
+                            <div
+                                class="w-14 h-14 rounded-full bg-deep-forest text-surface-container-lowest flex items-center justify-center font-stat-counter text-headline-md font-bold flex-shrink-0">
+                                4
+                            </div>
+                            <div class="flex flex-col">
+                                <h4 class="font-headline-sm text-headline-sm text-deep-forest">ส่งออเดอร์</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">เปิด LINE OA
+                                    พร้อมข้อความสรุปออเดอร์อัตโนมัติ ชำระเงินหรือเก็บเงินปลายทางได้ทันที</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Live Interactive Checkout Form & Preview Block (Slide 4 Summary Box) -->
+                    <div class="w-full bg-surface-container-lowest rounded-[2.5rem] p-space-xl shadow-md flex flex-col gap-space-lg"
+                        id="checkout">
+                        <div class="flex flex-col gap-space-xs">
+                            <span
+                                class="font-label-caps text-label-caps text-matcha-leaf uppercase tracking-wider">QUICK
+                                ORDER DISPATCH</span>
+                            <h3 class="font-headline-md text-headline-md text-deep-forest">
+                                ทดลองสรุปออเดอร์และสั่งซื้อผ่าน LINE</h3>
+                        </div>
+                        <!-- Interactive form inputs -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+                            <div class="flex flex-col gap-space-xs">
+                                <label class="font-label-md text-label-md text-deep-forest">ชุดผลิตภัณฑ์ที่เลือก</label>
+                                <select
+                                    class="w-full bg-surface-container-low px-space-md py-space-sm rounded-full font-body-md text-body-md text-deep-forest outline-none"
+                                    id="selectedSet" onchange="updateSummary()">
+                                    <option data-price="699" value="GROWING SET">ชุดโตดี (GROWING SET) - ฿699</option>
+                                    <option data-price="369" value="TRY SET">ชุดเริ่มต้น (TRY SET) - ฿369</option>
+                                </select>
+                            </div>
+                            <div class="flex flex-col gap-space-xs">
+                                <label class="font-label-md text-label-md text-deep-forest">จำนวน (กล่อง/เซ็ต)</label>
+                                <div class="flex items-center bg-surface-container-low rounded-full px-space-xs">
+                                    <button
+                                        class="w-10 h-10 rounded-full flex items-center justify-center text-deep-forest font-bold"
+                                        onclick="changeQty(-1)">-</button>
+                                    <input
+                                        class="w-full text-center bg-transparent font-headline-sm text-headline-sm text-deep-forest outline-none"
+                                        id="itemQty" max="10" min="1" oninput="updateSummary()" type="number"
+                                        value="1" />
+                                    <button
+                                        class="w-10 h-10 rounded-full flex items-center justify-center text-deep-forest font-bold"
+                                        onclick="changeQty(1)">+</button>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-space-xs">
+                                <label class="font-label-md text-label-md text-deep-forest">ชื่อผู้รับ &amp;
+                                    เบอร์โทรศัพท์</label>
+                                <input
+                                    class="w-full bg-surface-container-low px-space-md py-space-sm rounded-full font-body-md text-body-md text-deep-forest outline-none placeholder:text-on-surface-variant/50"
+                                    id="customerInfo" oninput="updateSummary()"
+                                    placeholder="คุณแม่สิริพร / 081-234-5678" type="text" />
+                            </div>
+                        </div>
+                        <!-- Summary Display Box (Faithful to Slide 4's green box) -->
+                        <div
+                            class="w-full bg-deep-forest text-surface-container-lowest rounded-[2rem] p-space-lg md:p-space-xl flex flex-col gap-space-md">
+                            <div
+                                class="flex items-center justify-between border-b border-surface-container-highest/20 pb-space-sm">
+                                <span
+                                    class="font-headline-sm text-headline-sm text-surface-container-lowest font-bold">ตัวอย่างข้อความสรุปออเดอร์</span>
+                                <span
+                                    class="font-label-caps text-label-caps bg-primary text-surface px-space-sm py-1 rounded-full">LINE
+                                    READY</span>
+                            </div>
+                            <!-- Dynamic Text Box -->
+                            <div class="font-body-lg text-body-lg text-[#D8F289] font-medium leading-relaxed"
+                                id="summaryPreview">
+                                GROWING SET x 1 = ฿699 | คุณแม่สิริพร | 081-234-5678 | พร้อมจัดส่ง
+                            </div>
+                            <div
+                                class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+                                <span class="font-body-sm text-body-sm text-surface-dim">
+                                    หมายเหตุ: ไม่มีการเก็บข้อมูลบัตรบน Landing Page ปลอดภัย 100%
+                                </span>
+                                <button
+                                    class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs bg-[#06C755] hover:bg-[#05b34c] text-surface font-headline-sm text-headline-sm px-space-xl py-space-sm rounded-full shadow-md transition-all active:translate-y-0.5"
+                                    onclick="sendToLine()">
+                                    <span class="material-symbols-outlined text-[20px]">chat</span>
+                                    <span>ส่งข้อมูลสั่งซื้อทาง LINE OA</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 5: DESIGN BLUEPRINT & CONCEPT OVERVIEW (SLIDE 5 INSPIRATION) -->
+            <section class="w-full bg-surface py-space-2xl px-gutter border-t border-on-surface/5">
+                <div class="max-w-5xl mx-auto flex flex-col gap-space-xl">
+                    <!-- Section Heading -->
+                    <div class="flex flex-col gap-space-xs text-left">
+                        <span class="font-label-caps text-label-caps text-matcha-leaf uppercase tracking-wider">DESIGN
+                            SYSTEM SPECIFICATION</span>
+                        <h2 class="font-headline-lg text-headline-lg text-deep-forest tracking-tight">
+                            ภาพรวมแนวทางออกแบบ
+                        </h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            หน้าเว็บเน้นความอบอุ่น ความน่าเชื่อถือ และการปิดการขายสำหรับคุณแม่
+                        </p>
+                    </div>
+                    <!-- 6 Blueprint Grid Cards (2 cols on md, 3 rows) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                        <!-- Blueprint 1 -->
+                        <div class="bg-butter-cream rounded-[2rem] p-space-lg flex flex-col gap-space-xs shadow-sm">
+                            <span
+                                class="font-headline-sm text-headline-sm text-deep-forest font-bold">กลุ่มเป้าหมาย</span>
+                            <p class="font-body-md text-body-md text-on-surface-variant">
+                                คุณแม่ที่มีลูกอายุ 6 ปีขึ้นไป ที่ใส่ใจพัฒนาการทางสมองและร่างกาย ลูกทานยาก
+                                หรือกังวลเรื่องการรับโปรตีนไม่ครบ
+                            </p>
+                        </div>
+                        <!-- Blueprint 2 -->
+                        <div class="bg-butter-cream rounded-[2rem] p-space-lg flex flex-col gap-space-xs shadow-sm">
+                            <span class="font-headline-sm text-headline-sm text-deep-forest font-bold">โครงเรื่อง</span>
+                            <p class="font-body-md text-body-md text-on-surface-variant">
+                                Story • Emotion • Human Experience • Product Selling (ร้อยเรียงอย่างลื่นไหล ไม่ยัดเยียด)
+                            </p>
+                        </div>
+                        <!-- Blueprint 3 -->
+                        <div class="bg-[#E5F3F0] rounded-[2rem] p-space-lg flex flex-col gap-space-xs shadow-sm">
+                            <span class="font-headline-sm text-headline-sm text-deep-forest font-bold">สีหลัก</span>
+                            <p class="font-body-md text-body-md text-on-surface-variant">
+                                เขียวธรรมชาติ (Deep Forest), ครีมละมุน (Butter Cream), ฟ้าอ่อน (Sky Tint) และสีชมพู
+                                (#FF4A6E) สำหรับจุดเน้น
+                            </p>
+                        </div>
+                        <!-- Blueprint 4 -->
+                        <div class="bg-[#E5F3F0] rounded-[2rem] p-space-lg flex flex-col gap-space-xs shadow-sm">
+                            <span class="font-headline-sm text-headline-sm text-deep-forest font-bold">จุดขาย</span>
+                            <p class="font-body-md text-body-md text-on-surface-variant">
+                                Plant Protein 8g / Wolffia / DHA จากสาหร่าย / ใยอาหารพรีไบโอติกส์ / Malt Flavor ดื่มง่าย
+                            </p>
+                        </div>
+                        <!-- Blueprint 5 -->
+                        <div class="bg-butter-cream rounded-[2rem] p-space-lg flex flex-col gap-space-xs shadow-sm">
+                            <span class="font-headline-sm text-headline-sm text-deep-forest font-bold">ช่องทางขาย</span>
+                            <p class="font-body-md text-body-md text-on-surface-variant">
+                                Landing Page + LINE OA @kinbalanza + Shopee Mall สะดวกในทุกช่องทางที่คุณแม่คุ้นเคย
+                            </p>
+                        </div>
+                        <!-- Blueprint 6 -->
+                        <div class="bg-butter-cream rounded-[2rem] p-space-lg flex flex-col gap-space-xs shadow-sm">
+                            <span class="font-headline-sm text-headline-sm text-deep-forest font-bold">สถานะไฟล์</span>
+                            <p class="font-body-md text-body-md text-on-surface-variant">
+                                เอกสารนี้ใช้เพื่อพรีวิวแนวทางก่อนสร้างบนแพลตฟอร์ม E-commerce และเว็บไซต์ขายสินค้าจริง
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Bottom Green Slogan Banner (Slide 5 Bottom) -->
+                    <div
+                        class="w-full bg-deep-forest text-surface-container-lowest rounded-[2rem] p-space-xl flex flex-col sm:flex-row items-center justify-between gap-space-md shadow-lg">
+                        <div class="flex flex-col">
+                            <span
+                                class="font-display-hero-mobile text-display-hero-mobile text-surface-container-lowest font-extrabold tracking-tight">
+                                Growing Happy Every Day
+                            </span>
+                            <span class="font-body-lg text-body-lg text-[#D8F289] font-medium">
+                                Kin Balanza — Plant Based Protein with Wolffia
+                            </span>
+                        </div>
+                        <a class="bg-[#D8F289] hover:bg-[#c9e871] text-deep-forest font-headline-sm text-headline-sm px-space-xl py-space-md rounded-full shadow-md transition-all active:translate-y-0.5"
+                            href="#packages">
+                            สั่งซื้อทันที
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script>
+            function handleSelectPackage(setName, price) {
+                const select = document.getElementById('selectedSet');
+                if (select) {
+                    select.value = setName;
+                    updateSummary();
+                    const checkoutSection = document.getElementById('checkout');
+                    if (checkoutSection) {
+                        checkoutSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            }
+
+            function changeQty(delta) {
+                const qtyInput = document.getElementById('itemQty');
+                if (qtyInput) {
+                    let currentVal = parseInt(qtyInput.value) || 1;
+                    currentVal = Math.max(1, Math.min(10, currentVal + delta));
+                    qtyInput.value = currentVal;
+                    updateSummary();
+                }
+            }
+
+            function updateSummary() {
+                const select = document.getElementById('selectedSet');
+                const qtyInput = document.getElementById('itemQty');
+                const customerInput = document.getElementById('customerInfo');
+                const summaryBox = document.getElementById('summaryPreview');
+
+                if (!select || !qtyInput || !summaryBox) return;
+
+                const selectedOption = select.options[select.selectedIndex];
+                const unitPrice = parseInt(selectedOption.getAttribute('data-price')) || 699;
+                const qty = parseInt(qtyInput.value) || 1;
+                const total = unitPrice * qty;
+                const customer = customerInput && customerInput.value.trim() ? customerInput.value.trim() : 'คุณแม่สิริพร / 081-234-5678';
+
+                summaryBox.textContent = `${select.value} x ${qty} = ฿${total.toLocaleString()} | ${customer} | พร้อมจัดส่งด่วน`;
+            }
+
+            function sendToLine() {
+                const summaryBox = document.getElementById('summaryPreview');
+                const text = summaryBox ? summaryBox.textContent : 'สั่งซื้อ Kin Balanza';
+                const encoded = encodeURIComponent('สวัสดีค่ะ สนใจสั่งซื้อ: ' + text);
+                window.open('https://line.me/R/ti/p/@kinbalanza?text=' + encoded, '_blank');
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                updateSummary();
+            });
+        </script>
+    </main>
+    <footer class="w-full bg-butter-cream border-t border-on-surface/10 py-space-2xl">
+        <div class="max-w-7xl mx-auto px-gutter">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl mb-space-2xl">
+                <div class="md:col-span-5 flex flex-col gap-space-sm">
+                    <div class="flex items-center gap-space-xs"><span
+                            class="font-headline-md text-headline-md text-deep-forest">Kin Balanza</span><span
+                            class="font-label-caps text-label-caps bg-sky-tint text-pure-black px-space-sm py-space-xs rounded-full">Wolffia
+                            Formula</span></div>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-md">นวัตกรรมโปรตีนพืชสมดุลจากผำ
+                        (Wolffia Globosa) ซูเปอร์ฟู้ดแห่งอนาคต เพื่อสุขภาพที่ยั่งยืน อิ่มท้อง สบายลำไส้
+                        และเต็มเปี่ยมด้วยกรดอะมิโนจำเป็นครบถ้วน</p>
+                </div>
+                <div class="md:col-span-3 flex flex-col gap-space-xs"><span
+                        class="font-label-caps text-label-caps text-deep-forest uppercase tracking-wider mb-space-xs">ช่องทางติดต่อ
+                        &amp; สนับสนุน</span><a
+                        class="font-body-md text-body-md text-on-surface-variant hover:text-deep-forest transition-colors"
+                        href="#">LINE OA: @kinbalanza</a><a
+                        class="font-body-md text-body-md text-on-surface-variant hover:text-deep-forest transition-colors"
+                        href="#">ฝ่ายบริการลูกค้าสัมพันธ์</a><a
+                        class="font-body-md text-body-md text-on-surface-variant hover:text-deep-forest transition-colors"
+                        href="#">คู่มือการรับประทาน</a></div>
+                <div class="md:col-span-4 flex flex-col gap-space-xs"><span
+                        class="font-label-caps text-label-caps text-deep-forest uppercase tracking-wider mb-space-xs">มาตรฐานและความปลอดภัย</span>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">ผลิตภัณฑ์เสริมอาหารคิน
+                        บาลานซา ผ่านการรับรองมาตรฐานสากล GHPs/HACCP ผลิตจากวัตถุดิบธรรมชาติ ปราศจากสารก่อภูมิแพ้
+                        ถั่วเหลือง กลูเตน และสารกันเสีย</p>
+                </div>
+            </div>
+            <div
+                class="border-t border-on-surface/5 pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+                <p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Kin Balanza Co., Ltd.
+                    สงวนลิขสิทธิ์ทุกประการ Contact: @kinbalanza</p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant/80 text-center sm:text-right">Regulatory
+                    Disclaimer: ผลิตภัณฑ์นี้เป็นอาหารเสริม ไม่มีผลในการป้องกันหรือรักษาโรค</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
